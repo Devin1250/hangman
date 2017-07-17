@@ -13,8 +13,8 @@ public class hangman {
 	static int totalcheck;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		
+
+		//GitHub commit Test
 		//Devin Samaranayake
 		Scanner getname = new Scanner(System.in);
 		System.out.println("Please enter your name");
@@ -52,7 +52,7 @@ public class hangman {
 		//used to check if the letter was in the correct word or not
 		for(int x = 0; x<carray.length;x++)
 		{
-			
+
 			if (carray[x]==guess)
 			{
 				dashar[x]=guess;
@@ -61,7 +61,7 @@ public class hangman {
 			else if(x==carray.length-1&& count ==0)
 			{
 				wrong = wrong+1;
-				
+
 			}
 		}
 		if (wrong==6)
@@ -83,9 +83,9 @@ public class hangman {
 			wins=wins+1;
 			total = total+1;
 			}
-		
+
 		System.out.println(checks);
-		
+
 		}
 		updatestats(name, wins, total);
 		displaystats();
@@ -98,16 +98,16 @@ public class hangman {
 		System.out.println("======================================");
 			while(s.hasNext())
 			{
-				
+
 				System.out.println(s.next()+"		"+s.nextInt()+"	 "+s.nextInt());
-				
+
 			}
 		}
 		catch(IOException e)
 		{
 			System.out.println("No Word File Found");
 		}
-		
+
 	}
 	static void updatestats(String name, int wins, int total)
 	{
@@ -137,7 +137,7 @@ public class hangman {
 							lists.add(""+wins);
 							lists.add(""+total);
 						}
-					
+
 					}
 				}
 				else
@@ -151,7 +151,7 @@ public class hangman {
 				output = output + "\n" + lists.get(x);
 				}
 				FileWriter writer = new FileWriter("stats.txt");
-				
+
 		        writer.write(output);
 		        writer.close();
 
@@ -165,7 +165,7 @@ public class hangman {
 	{
 		try
 		{
-			
+
 			Scanner s = new Scanner(new File("stats.txt"));
 			while(s.hasNext())
 			{
@@ -176,8 +176,8 @@ public class hangman {
 					break;
 				}
 			}
-			
-			
+
+
 		}
 		catch (IOException e)
 		{
@@ -240,8 +240,8 @@ public class hangman {
 		try
 		{
 			Scanner wordscan = new Scanner(new File("file.txt"));
-			for(int x = 0; x<amount();x++)		
-				posswords[x]= wordscan.nextLine();	
+			for(int x = 0; x<amount();x++)
+				posswords[x]= wordscan.nextLine();
 			//This for loop adds the words in the file to the Array posswords
 		}
 		catch (IOException e)
